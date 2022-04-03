@@ -7,29 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8C13BB4427EBA42C00458CB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C13BB4327EBA42C00458CB4 /* AppDelegate.swift */; };
-		8C13BB4627EBA42C00458CB4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C13BB4527EBA42C00458CB4 /* SceneDelegate.swift */; };
-		8C13BB4827EBA42C00458CB4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C13BB4727EBA42C00458CB4 /* ViewController.swift */; };
-		8C13BB4B27EBA42C00458CB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C13BB4927EBA42C00458CB4 /* Main.storyboard */; };
-		8C13BB4D27EBA42F00458CB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C13BB4C27EBA42F00458CB4 /* Assets.xcassets */; };
-		8C13BB5027EBA42F00458CB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C13BB4E27EBA42F00458CB4 /* LaunchScreen.storyboard */; };
-		8CE39BE327EF0E4000E83505 /* bars-solid.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8CE39BE227EF0E4000E83505 /* bars-solid.svg */; };
+		8CC227F027F9076900ECE574 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC227EF27F9076900ECE574 /* AppDelegate.swift */; };
+		8CC227F227F9076900ECE574 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC227F127F9076900ECE574 /* SceneDelegate.swift */; };
+		8CC227F427F9076900ECE574 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC227F327F9076900ECE574 /* ViewController.swift */; };
+		8CC227F727F9076900ECE574 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC227F527F9076900ECE574 /* Main.storyboard */; };
+		8CC227F927F9076C00ECE574 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CC227F827F9076C00ECE574 /* Assets.xcassets */; };
+		8CC227FC27F9076C00ECE574 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CC227FA27F9076C00ECE574 /* LaunchScreen.storyboard */; };
+		8CC2280C27F99F8900ECE574 /* gallery.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CC2280B27F99F8900ECE574 /* gallery.png */; };
+		8CC2280E27F99F9A00ECE574 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CC2280D27F99F9A00ECE574 /* camera.png */; };
+		8CC2281027F9AA3700ECE574 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CC2280F27F9AA3700ECE574 /* home.png */; };
+		8CC2281427F9AC7200ECE574 /* history.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CC2281327F9AC7200ECE574 /* history.png */; };
+		8CC2281627F9B95A00ECE574 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC2281527F9B95A00ECE574 /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8C13BB4027EBA42C00458CB4 /* Calorizoid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calorizoid.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8C13BB4327EBA42C00458CB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8C13BB4527EBA42C00458CB4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8C13BB4727EBA42C00458CB4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8C13BB4A27EBA42C00458CB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8C13BB4C27EBA42F00458CB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8C13BB4F27EBA42F00458CB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8C13BB5127EBA42F00458CB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8CE39BE227EF0E4000E83505 /* bars-solid.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "bars-solid.svg"; path = "../../../../../../Downloads/bars-solid.svg"; sourceTree = "<group>"; };
+		8CC227EC27F9076900ECE574 /* Deepfakery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Deepfakery.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CC227EF27F9076900ECE574 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8CC227F127F9076900ECE574 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8CC227F327F9076900ECE574 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8CC227F627F9076900ECE574 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8CC227F827F9076C00ECE574 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8CC227FB27F9076C00ECE574 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8CC227FD27F9076C00ECE574 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CC2280B27F99F8900ECE574 /* gallery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gallery.png; path = ../../../../../../Downloads/gallery.png; sourceTree = "<group>"; };
+		8CC2280D27F99F9A00ECE574 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = camera.png; path = ../../../../../../Downloads/camera.png; sourceTree = "<group>"; };
+		8CC2280F27F9AA3700ECE574 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home.png; path = ../../../../../../Downloads/home.png; sourceTree = "<group>"; };
+		8CC2281327F9AC7200ECE574 /* history.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = history.png; path = ../../../../../../Downloads/history.png; sourceTree = "<group>"; };
+		8CC2281527F9B95A00ECE574 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8C13BB3D27EBA42C00458CB4 /* Frameworks */ = {
+		8CC227E927F9076900ECE574 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,73 +47,77 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8C13BB3727EBA42C00458CB4 = {
+		8CC227E327F9076900ECE574 = {
 			isa = PBXGroup;
 			children = (
-				8C13BB4227EBA42C00458CB4 /* Calorizoid */,
-				8C13BB4127EBA42C00458CB4 /* Products */,
+				8CC227EE27F9076900ECE574 /* Deepfakery */,
+				8CC227ED27F9076900ECE574 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		8C13BB4127EBA42C00458CB4 /* Products */ = {
+		8CC227ED27F9076900ECE574 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8C13BB4027EBA42C00458CB4 /* Calorizoid.app */,
+				8CC227EC27F9076900ECE574 /* Deepfakery.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8C13BB4227EBA42C00458CB4 /* Calorizoid */ = {
+		8CC227EE27F9076900ECE574 /* Deepfakery */ = {
 			isa = PBXGroup;
 			children = (
-				8C13BB4327EBA42C00458CB4 /* AppDelegate.swift */,
-				8C13BB4527EBA42C00458CB4 /* SceneDelegate.swift */,
-				8C13BB4727EBA42C00458CB4 /* ViewController.swift */,
-				8C13BB4927EBA42C00458CB4 /* Main.storyboard */,
-				8C13BB4C27EBA42F00458CB4 /* Assets.xcassets */,
-				8C13BB4E27EBA42F00458CB4 /* LaunchScreen.storyboard */,
-				8C13BB5127EBA42F00458CB4 /* Info.plist */,
-				8CE39BE227EF0E4000E83505 /* bars-solid.svg */,
+				8CC227EF27F9076900ECE574 /* AppDelegate.swift */,
+				8CC227F127F9076900ECE574 /* SceneDelegate.swift */,
+				8CC227F327F9076900ECE574 /* ViewController.swift */,
+				8CC2281527F9B95A00ECE574 /* SecondViewController.swift */,
+				8CC227F527F9076900ECE574 /* Main.storyboard */,
+				8CC227F827F9076C00ECE574 /* Assets.xcassets */,
+				8CC227FA27F9076C00ECE574 /* LaunchScreen.storyboard */,
+				8CC227FD27F9076C00ECE574 /* Info.plist */,
+				8CC2280B27F99F8900ECE574 /* gallery.png */,
+				8CC2280D27F99F9A00ECE574 /* camera.png */,
+				8CC2280F27F9AA3700ECE574 /* home.png */,
+				8CC2281327F9AC7200ECE574 /* history.png */,
 			);
-			path = Calorizoid;
+			path = Deepfakery;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8C13BB3F27EBA42C00458CB4 /* Calorizoid */ = {
+		8CC227EB27F9076900ECE574 /* Deepfakery */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8C13BB5427EBA42F00458CB4 /* Build configuration list for PBXNativeTarget "Calorizoid" */;
+			buildConfigurationList = 8CC2280027F9076C00ECE574 /* Build configuration list for PBXNativeTarget "Deepfakery" */;
 			buildPhases = (
-				8C13BB3C27EBA42C00458CB4 /* Sources */,
-				8C13BB3D27EBA42C00458CB4 /* Frameworks */,
-				8C13BB3E27EBA42C00458CB4 /* Resources */,
+				8CC227E827F9076900ECE574 /* Sources */,
+				8CC227E927F9076900ECE574 /* Frameworks */,
+				8CC227EA27F9076900ECE574 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Calorizoid;
-			productName = Calorizoid;
-			productReference = 8C13BB4027EBA42C00458CB4 /* Calorizoid.app */;
+			name = Deepfakery;
+			productName = Deepfakery;
+			productReference = 8CC227EC27F9076900ECE574 /* Deepfakery.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		8C13BB3827EBA42C00458CB4 /* Project object */ = {
+		8CC227E427F9076900ECE574 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
-					8C13BB3F27EBA42C00458CB4 = {
+					8CC227EB27F9076900ECE574 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
 				};
 			};
-			buildConfigurationList = 8C13BB3B27EBA42C00458CB4 /* Build configuration list for PBXProject "Calorizoid" */;
+			buildConfigurationList = 8CC227E727F9076900ECE574 /* Build configuration list for PBXProject "Deepfakery" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -113,56 +125,60 @@
 				en,
 				Base,
 			);
-			mainGroup = 8C13BB3727EBA42C00458CB4;
-			productRefGroup = 8C13BB4127EBA42C00458CB4 /* Products */;
+			mainGroup = 8CC227E327F9076900ECE574;
+			productRefGroup = 8CC227ED27F9076900ECE574 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8C13BB3F27EBA42C00458CB4 /* Calorizoid */,
+				8CC227EB27F9076900ECE574 /* Deepfakery */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8C13BB3E27EBA42C00458CB4 /* Resources */ = {
+		8CC227EA27F9076900ECE574 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8CE39BE327EF0E4000E83505 /* bars-solid.svg in Resources */,
-				8C13BB5027EBA42F00458CB4 /* LaunchScreen.storyboard in Resources */,
-				8C13BB4D27EBA42F00458CB4 /* Assets.xcassets in Resources */,
-				8C13BB4B27EBA42C00458CB4 /* Main.storyboard in Resources */,
+				8CC227FC27F9076C00ECE574 /* LaunchScreen.storyboard in Resources */,
+				8CC227F927F9076C00ECE574 /* Assets.xcassets in Resources */,
+				8CC2281027F9AA3700ECE574 /* home.png in Resources */,
+				8CC2280C27F99F8900ECE574 /* gallery.png in Resources */,
+				8CC227F727F9076900ECE574 /* Main.storyboard in Resources */,
+				8CC2280E27F99F9A00ECE574 /* camera.png in Resources */,
+				8CC2281427F9AC7200ECE574 /* history.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8C13BB3C27EBA42C00458CB4 /* Sources */ = {
+		8CC227E827F9076900ECE574 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C13BB4827EBA42C00458CB4 /* ViewController.swift in Sources */,
-				8C13BB4427EBA42C00458CB4 /* AppDelegate.swift in Sources */,
-				8C13BB4627EBA42C00458CB4 /* SceneDelegate.swift in Sources */,
+				8CC2281627F9B95A00ECE574 /* SecondViewController.swift in Sources */,
+				8CC227F427F9076900ECE574 /* ViewController.swift in Sources */,
+				8CC227F027F9076900ECE574 /* AppDelegate.swift in Sources */,
+				8CC227F227F9076900ECE574 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		8C13BB4927EBA42C00458CB4 /* Main.storyboard */ = {
+		8CC227F527F9076900ECE574 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8C13BB4A27EBA42C00458CB4 /* Base */,
+				8CC227F627F9076900ECE574 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		8C13BB4E27EBA42F00458CB4 /* LaunchScreen.storyboard */ = {
+		8CC227FA27F9076C00ECE574 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				8C13BB4F27EBA42F00458CB4 /* Base */,
+				8CC227FB27F9076C00ECE574 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -170,7 +186,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		8C13BB5227EBA42F00458CB4 /* Debug */ = {
+		8CC227FE27F9076C00ECE574 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -231,7 +247,7 @@
 			};
 			name = Debug;
 		};
-		8C13BB5327EBA42F00458CB4 /* Release */ = {
+		8CC227FF27F9076C00ECE574 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -286,7 +302,7 @@
 			};
 			name = Release;
 		};
-		8C13BB5527EBA42F00458CB4 /* Debug */ = {
+		8CC2280127F9076C00ECE574 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -295,7 +311,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7BHQ96RQ7P;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Calorizoid/Info.plist;
+				INFOPLIST_FILE = Deepfakery/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -306,7 +322,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = vk.Calorizoid;
+				PRODUCT_BUNDLE_IDENTIFIER = vk.Deepfakery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -314,7 +330,7 @@
 			};
 			name = Debug;
 		};
-		8C13BB5627EBA42F00458CB4 /* Release */ = {
+		8CC2280227F9076C00ECE574 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -323,7 +339,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7BHQ96RQ7P;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Calorizoid/Info.plist;
+				INFOPLIST_FILE = Deepfakery/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -334,7 +350,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = vk.Calorizoid;
+				PRODUCT_BUNDLE_IDENTIFIER = vk.Deepfakery;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -345,25 +361,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8C13BB3B27EBA42C00458CB4 /* Build configuration list for PBXProject "Calorizoid" */ = {
+		8CC227E727F9076900ECE574 /* Build configuration list for PBXProject "Deepfakery" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8C13BB5227EBA42F00458CB4 /* Debug */,
-				8C13BB5327EBA42F00458CB4 /* Release */,
+				8CC227FE27F9076C00ECE574 /* Debug */,
+				8CC227FF27F9076C00ECE574 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8C13BB5427EBA42F00458CB4 /* Build configuration list for PBXNativeTarget "Calorizoid" */ = {
+		8CC2280027F9076C00ECE574 /* Build configuration list for PBXNativeTarget "Deepfakery" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8C13BB5527EBA42F00458CB4 /* Debug */,
-				8C13BB5627EBA42F00458CB4 /* Release */,
+				8CC2280127F9076C00ECE574 /* Debug */,
+				8CC2280227F9076C00ECE574 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 8C13BB3827EBA42C00458CB4 /* Project object */;
+	rootObject = 8CC227E427F9076900ECE574 /* Project object */;
 }

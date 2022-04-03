@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Calorizoid
+//  Deepfakery
 //
-//  Created by Jasur Tursunov on 23.03.2022.
+//  Created by Jasur Tursunov on 03.04.2022.
 //
 
 import UIKit
