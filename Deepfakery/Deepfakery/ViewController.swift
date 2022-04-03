@@ -99,6 +99,15 @@ class ViewController: UIViewController {
             self.historyButton.widthAnchor.constraint(equalToConstant: 32),
             self.historyButton.heightAnchor.constraint(equalToConstant: 32)
         ])
+        
+        self.historyButton.addTarget(self, action: #selector(tapOnButton), for: .touchUpInside)
+    }
+    
+    
+    @objc func tapOnButton() {
+        let story = UIStoryboard(name: "Main", bundle: nil)
+        let controller = story.instantiateViewController(withIdentifier: "SecondViewController") as! SecondViewController
+        self.present(controller, animated: true, completion: nil)
     }
     
     private func addCollectionView() {
