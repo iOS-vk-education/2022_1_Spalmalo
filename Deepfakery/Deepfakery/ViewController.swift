@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     private let collectionView: UICollectionView = .init(frame: CGRect(x: 0,
                                                                        y: 80,
                                                                        width: UIScreen.main.bounds.width,
-                                                                       height: UIScreen.main.bounds.height - 160),
+                                                                       height: UIScreen.main.bounds.height - 80),
                                                          collectionViewLayout:UICollectionViewLayout.init())
     private let dateLabel = UILabel()
     private let cameraButton = UIButton()
@@ -55,18 +55,18 @@ class ViewController: UIViewController {
     
     private func configureUI() {
         self.addTopNavBar()
-        self.addBottomNavBar()
+//        self.addBottomNavBar()
         self.addCollectionView()
         
     }
     
     private func addTopNavBar() {
         self.view.addSubview(self.topNavbar)
-        self.topNavbar.backgroundColor = colorWithHexString(hexString: "859F27")
+        self.topNavbar.backgroundColor = .kek
         self.topNavbar.addSubview(self.dateLabel)
         // date label
         self.dateLabel.translatesAutoresizingMaskIntoConstraints = false
-        self.dateLabel.text = self.DateAsString()
+        self.dateLabel.text = UILabel.DateAsString()
         NSLayoutConstraint.activate([
             self.dateLabel.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -20),
             self.dateLabel.topAnchor.constraint(equalTo: self.topNavbar.topAnchor, constant: 50)
@@ -76,7 +76,7 @@ class ViewController: UIViewController {
     
     private func addBottomNavBar() {
         self.view.addSubview(self.bottomNavbar)
-        self.bottomNavbar.backgroundColor = colorWithHexString(hexString: "859F27")
+        self.bottomNavbar.backgroundColor = .kek
         
         //home button
         self.bottomNavbar.addSubview(self.homeButton)
@@ -100,15 +100,9 @@ class ViewController: UIViewController {
             self.historyButton.heightAnchor.constraint(equalToConstant: 32)
         ])
         
-        self.historyButton.addTarget(self, action: #selector(tapOnButton), for: .touchUpInside)
+//        self.historyButton.addTarget(self, action: #selector(tapOnButton), for: .touchUpInside)
     }
     
-    
-    @objc func tapOnButton() {
-        let story = UIStoryboard(name: "Main", bundle: nil)
-        let controller = story.instantiateViewController(withIdentifier: "SecondViewController") as! SecondViewController
-        self.present(controller, animated: true, completion: nil)
-    }
     
     private func addCollectionView() {
         self.view.addSubview(self.collectionView)
@@ -116,7 +110,7 @@ class ViewController: UIViewController {
         
         // camera button
         self.collectionView.addSubview(self.cameraButton)
-        self.cameraButton.backgroundColor = colorWithHexString(hexString: "859F27")
+        self.cameraButton.backgroundColor = .kek
         self.cameraButton.layer.cornerRadius = 20
         self.cameraButton.setImage(UIImage(named: "camera.png"), for: .normal)
         self.cameraButton.translatesAutoresizingMaskIntoConstraints = false
@@ -128,7 +122,7 @@ class ViewController: UIViewController {
         ])
        // gallery button
         self.collectionView.addSubview(self.galleryButton)
-        self.galleryButton.backgroundColor = colorWithHexString(hexString: "F4DFA8")
+        self.galleryButton.backgroundColor = .serik
         self.galleryButton.layer.cornerRadius = 20
         self.galleryButton.setImage(UIImage(named: "gallery.png"), for: .normal)
         self.galleryButton.translatesAutoresizingMaskIntoConstraints = false
@@ -164,14 +158,25 @@ class ViewController: UIViewController {
         ])
         
     }
-    
-    
+}
+
+extension UILabel {
+    static func DateAsString() -> String {
+        let date = NSDate()
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en")
+        dateFormatter.dateFormat = "EEEE, MMMM d"
+        return dateFormatter.string(from: date as Date)
+    }
 }
 
 
-extension ViewController {
+extension UIColor {
     
-    func colorWithHexString(hexString: String, alpha:CGFloat = 1.0) -> UIColor {
+    static let kek = UIColor.colorWithHexString(hexString: "859F27")
+    static let serik = colorWithHexString(hexString: "F4DFA8")
+    
+    static func colorWithHexString(hexString: String, alpha:CGFloat = 1.0) -> UIColor {
         // Convert hex string to an integer
         let hexint = Int(self.intFromHexString(hexStr: hexString))
         let red = CGFloat((hexint & 0xff0000) >> 16) / 255.0
@@ -183,7 +188,7 @@ extension ViewController {
         return color
     }
     
-    func intFromHexString(hexStr: String) -> UInt32 {
+    static func intFromHexString(hexStr: String) -> UInt32 {
         var hexInt: UInt32 = 0
         // Create scanner
         let scanner: Scanner = Scanner(string: hexStr)
@@ -192,13 +197,5 @@ extension ViewController {
         // Scan hex value
         hexInt = UInt32(bitPattern: scanner.scanInt32(representation: .hexadecimal) ?? 0)
         return hexInt
-    }
-    
-    func DateAsString() -> String {
-        let date = NSDate()
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en")
-        dateFormatter.dateFormat = "EEEE, MMMM d"
-        return dateFormatter.string(from: date as Date)
     }
 }
