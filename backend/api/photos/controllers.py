@@ -13,19 +13,22 @@ IMAGE_SIZE = (28, 28)
 
 model = tf.keras.models.load_model(Path(Path.cwd(), "recognizer", "model"))
 
-def preprocess_image(img):
-    image = Image.fromarray(img)
-    image = image.resize(IMAGE_SIZE)
-    image = image.convert('L')
-
-    return np.asarray(image)
+# На стороне клиента:
+# 1) Открыть изображение и прогнать функцию preprocess_image(np.asarray(изображение))
+# 2) Отправить полученный результат res.tolist() в виде запроса
+# def preprocess_image(img):
+#     image = Image.fromarray(img)
+#     image = image.resize(IMAGE_SIZE)
+#     image = image.convert('L')
+#     return np.asarray(image)
 
 class Photo(Resource):
     @staticmethod
     def post():
         """Провериь новое фото"""
-        image = preprocess_image(np.asarray(Image.open("/Users/ztursunov/Desktop/deepfake/real/121560.jpg")))
-        result = model.predict(image[np.newaxis])
+        
+        decoded_image = np.asarray(request.json["data"])
+        result = model.predict(decoded_image[np.newaxis])
     
         cls = ["FAKE", "REAL"][np.argmax(result)]
         score = np.max(result)
