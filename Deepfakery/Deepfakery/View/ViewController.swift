@@ -7,6 +7,8 @@
 
 import UIKit
 import AVFoundation
+import Firebase
+import SwiftUI
 
 class ViewController: UIViewController {
     private let topNavbar = UINavigationBar(frame: CGRect(x: 0,
@@ -30,6 +32,7 @@ class ViewController: UIViewController {
     private let cameraButton = UIButton()
     private let galleryButton = UIButton()
     private let startButton = UIButton()
+    private let logOutButton = UIButton()
 //    private let progressView = UIView()
 
         
@@ -71,7 +74,6 @@ class ViewController: UIViewController {
             self.dateLabel.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -20),
             self.dateLabel.topAnchor.constraint(equalTo: self.topNavbar.topAnchor, constant: 50)
         ])
-        
     }
     
     
@@ -86,7 +88,7 @@ class ViewController: UIViewController {
         self.cameraButton.setImage(UIImage(named: "camera.png"), for: .normal)
         self.cameraButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            self.cameraButton.topAnchor.constraint(equalTo: self.topNavbar.bottomAnchor, constant: 50.0),
+            self.cameraButton.topAnchor.constraint(equalTo: self.topNavbar.bottomAnchor, constant: 80.0),
             self.cameraButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 50),
             self.cameraButton.widthAnchor.constraint(equalToConstant: 120),
             self.cameraButton.heightAnchor.constraint(equalToConstant: 120)
@@ -99,7 +101,7 @@ class ViewController: UIViewController {
         self.galleryButton.setImage(UIImage(named: "gallery.png"), for: .normal)
         self.galleryButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            self.galleryButton.topAnchor.constraint(equalTo: self.topNavbar.bottomAnchor, constant: 50.0),
+            self.galleryButton.topAnchor.constraint(equalTo: self.topNavbar.bottomAnchor, constant: 80.0),
             self.galleryButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -50),
             self.galleryButton.widthAnchor.constraint(equalToConstant: 120),
             self.galleryButton.heightAnchor.constraint(equalToConstant: 120)
@@ -116,6 +118,16 @@ class ViewController: UIViewController {
             self.startButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -110),
             self.startButton.heightAnchor.constraint(equalToConstant: 40)
         ])
+        
+        self.collectionView.addSubview(self.logOutButton)
+        self.logOutButton.setTitle("Log Out", for: .normal)
+        self.logOutButton.setTitleColor(.black, for: .normal)
+        self.logOutButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            self.logOutButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -20),
+            self.logOutButton.topAnchor.constraint(equalTo: self.topNavbar.bottomAnchor, constant: 10)
+        ])
+        self.logOutButton.addTarget(self, action: #selector(self.onClickLogoutButton), for: .touchUpInside)
     }
     
     @objc
@@ -124,6 +136,21 @@ class ViewController: UIViewController {
         picker.sourceType = .camera
         picker.delegate = self
         present(picker, animated: true)
+    }
+    
+    @objc
+    private func onClickLogoutButton() {
+        do {
+            try Auth.auth().signOut()
+        }
+        catch {
+            print("Error occured")
+            UserDefaults.standard.set(true, forKey: "isUserLoggined")
+        }
+        UserDefaults.standard.set(false, forKey: "isUserLoggined")
+        self.dismiss(animated: true)
+        self.present(MainPageBuilder.build(), animated: false)
+        
     }
 }
 

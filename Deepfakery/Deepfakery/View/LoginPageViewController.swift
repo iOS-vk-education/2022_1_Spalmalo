@@ -11,8 +11,6 @@ import Firebase
 
 
 class LoginPageViewController: UIViewController {
-    @StateObject var loginModel: LoginViewModel = LoginViewModel()
-    
     private let collectionView: UICollectionView = .init(frame: CGRect(x: 0,
                                                                        y: 0,
                                                                        width: UIScreen.main.bounds.width,
@@ -23,18 +21,21 @@ class LoginPageViewController: UIViewController {
     private let retryPasswordField = UITextField()
     private let logInButton = UIButton()
     private let registerButton = UIButton()
+    private let registerLinkButton = UIButton()
     private let backButton = UIButton()
-    private let textLabel = LabelButton()
+    private let textLabel = UILabel()
     private var registerFlag = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tapGesture = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tapGesture)
         self.configureUI()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.emailField.becomeFirstResponder()
+//        self.emailField.becomeFirstResponder()
     }
     
     private func configureUI() {
@@ -75,7 +76,7 @@ class LoginPageViewController: UIViewController {
             self.registerButton.showsTouchWhenHighlighted = true
             NSLayoutConstraint.activate([
                 self.registerButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-                self.registerButton.topAnchor.constraint(equalTo: self.retryPasswordField.bottomAnchor, constant: 30),
+                self.registerButton.topAnchor.constraint(equalTo: self.retryPasswordField.bottomAnchor, constant: 105),
                 self.registerButton.widthAnchor.constraint(equalToConstant: 150),
                 self.registerButton.heightAnchor.constraint(equalToConstant: 45)
             ])
@@ -152,7 +153,7 @@ class LoginPageViewController: UIViewController {
         
         self.collectionView.addSubview(self.textLabel)
         self.textLabel.textColor = .white
-        self.textLabel.text = "Нет аккаунта? Зарегистрироваться"
+        self.textLabel.text = "Haven't any account?"
         self.textLabel.textColor = .white
         self.textLabel.translatesAutoresizingMaskIntoConstraints = false
         
@@ -160,18 +161,35 @@ class LoginPageViewController: UIViewController {
             self.textLabel.topAnchor.constraint(equalTo: self.logInButton.bottomAnchor, constant: 50),
             self.textLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
         ])
-        self.textLabel.onClick = {
-            print("Yahoo")
-            self.registerFlag = true
-            self.viewDidLoad()
-            self.textLabel.isHidden = true
-            self.logInButton.isHidden = true
-            self.retryPasswordField.isHidden = false
-            self.registerButton.isHidden = false
-            self.backButton.isHidden = false
-            
-            
-        }
+        
+        
+        self.collectionView.addSubview(self.registerLinkButton)
+        self.registerLinkButton.backgroundColor = .serik
+        self.registerLinkButton.layer.cornerRadius = 20
+        self.registerLinkButton.setTitle("Create account", for: .normal)
+        self.registerLinkButton.setTitleColor(.black, for: .normal)
+        self.registerLinkButton.translatesAutoresizingMaskIntoConstraints = false
+        self.registerLinkButton.showsTouchWhenHighlighted = true
+        NSLayoutConstraint.activate([
+            self.registerLinkButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            self.registerLinkButton.topAnchor.constraint(equalTo: self.textLabel.bottomAnchor, constant: 30),
+            self.registerLinkButton.widthAnchor.constraint(equalToConstant: 150),
+            self.registerLinkButton.heightAnchor.constraint(equalToConstant: 45)
+        ])
+        self.registerLinkButton.addTarget(self, action: #selector(self.onClickNoAccountButton(sender:)), for: .touchUpInside)
+        
+    }
+    
+    @objc
+    private func onClickNoAccountButton(sender: UIButton) {
+        self.registerFlag = true
+        self.viewDidLoad()
+        self.textLabel.isHidden = true
+        self.logInButton.isHidden = true
+        self.retryPasswordField.isHidden = false
+        self.registerButton.isHidden = false
+        self.backButton.isHidden = false
+        self.registerLinkButton.isHidden = true
     }
     
     @objc
@@ -190,6 +208,9 @@ class LoginPageViewController: UIViewController {
                 return
             }
             print("success Log IN")
+            UserDefaults.standard.set(true, forKey: "isUserLoggined")
+            self.present(MainPageBuilder.build(), animated: true)
+            // при логауте флаг фалс и дисмисс экрана
         }
     }
     
@@ -210,6 +231,8 @@ class LoginPageViewController: UIViewController {
             
             guard error == nil else { return }
             print("Succsessfully registered")
+            UserDefaults.standard.set(true, forKey: "isUserLoggined")
+            self.present(MainPageBuilder.build(), animated: true)
         })
     }
     
@@ -222,6 +245,7 @@ class LoginPageViewController: UIViewController {
         self.backButton.isHidden = true
         self.logInButton.isHidden = false
         self.textLabel.isHidden = false
+        self.registerLinkButton.isHidden = false
        
     }
     

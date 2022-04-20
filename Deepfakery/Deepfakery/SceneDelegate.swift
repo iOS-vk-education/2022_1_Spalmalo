@@ -16,24 +16,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        
         guard let windowScene = (scene as? UIWindowScene) else { return }
         self.window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         
         let loginPageViewController = LoginPageViewController()
-//        let firstViewController = ViewController()
-//        let secondViewController = SecondViewController()
-//        
-//        let firstNavController = UINavigationController(rootViewController: firstViewController)
-//        firstNavController.tabBarItem.image = UIImage(named: "home.png")
-//
-//        let secondNavController = UINavigationController(rootViewController: secondViewController)
-//        secondNavController.tabBarItem.image = UIImage(named: "history.png")
-//        
-//        let tabBarViewController = UITabBarController()
-//        tabBarViewController.setViewControllers([firstNavController, secondNavController], animated: true)
-//        tabBarViewController.tabBar.tintColor = .black
+        let tabBarVC = MainPageBuilder.build()
         
+        let isUserLogged = UserDefaults.standard.bool(forKey: "isUserLoggined")
+        if isUserLogged {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+                loginPageViewController.present(tabBarVC, animated: false)
+            }
+        }
         window?.windowScene = windowScene
         window?.rootViewController = loginPageViewController
         window?.makeKeyAndVisible()
@@ -68,5 +62,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
 
+}
+
+final class MainPageBuilder {
+    static func build() -> UIViewController {
+        let firstViewController = ViewController()
+        let secondViewController = SecondViewController()
+        
+        let firstNavController = UINavigationController(rootViewController: firstViewController)
+        firstNavController.tabBarItem.image = UIImage(named: "home.png")
+
+        let secondNavController = UINavigationController(rootViewController: secondViewController)
+        secondNavController.tabBarItem.image = UIImage(named: "history.png")
+        
+        let tabBarViewController = UITabBarController()
+        tabBarViewController.setViewControllers([firstNavController, secondNavController], animated: true)
+        tabBarViewController.tabBar.tintColor = .black
+        tabBarViewController.modalPresentationStyle = .fullScreen
+        return tabBarViewController
+    }
 }
 
