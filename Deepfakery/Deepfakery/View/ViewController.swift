@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     private let topNavbar = UINavigationBar(frame: CGRect(x: 0,
@@ -29,7 +30,7 @@ class ViewController: UIViewController {
     private let cameraButton = UIButton()
     private let galleryButton = UIButton()
     private let startButton = UIButton()
-    private let progressView = UIView()
+//    private let progressView = UIView()
 
         
     // MARK: - Life cycle
@@ -55,7 +56,6 @@ class ViewController: UIViewController {
     
     private func configureUI() {
         self.addTopNavBar()
-//        self.addBottomNavBar()
         self.addCollectionView()
         
     }
@@ -72,35 +72,6 @@ class ViewController: UIViewController {
             self.dateLabel.topAnchor.constraint(equalTo: self.topNavbar.topAnchor, constant: 50)
         ])
         
-    }
-    
-    private func addBottomNavBar() {
-        self.view.addSubview(self.bottomNavbar)
-        self.bottomNavbar.backgroundColor = .kek
-        
-        //home button
-        self.bottomNavbar.addSubview(self.homeButton)
-        self.homeButton.setImage(UIImage(named: "home.png"), for: .normal)
-        self.homeButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            self.homeButton.topAnchor.constraint(equalTo: self.bottomNavbar.topAnchor, constant: 20.0),
-            self.homeButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 50),
-            self.homeButton.widthAnchor.constraint(equalToConstant: 32),
-            self.homeButton.heightAnchor.constraint(equalToConstant: 32)
-        ])
-        
-        //history button
-        self.bottomNavbar.addSubview(self.historyButton)
-        self.historyButton.setImage(UIImage(named: "history.png"), for: .normal)
-        self.historyButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            self.historyButton.topAnchor.constraint(equalTo: self.bottomNavbar.topAnchor, constant: 20.0),
-            self.historyButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -50),
-            self.historyButton.widthAnchor.constraint(equalToConstant: 32),
-            self.historyButton.heightAnchor.constraint(equalToConstant: 32)
-        ])
-        
-//        self.historyButton.addTarget(self, action: #selector(tapOnButton), for: .touchUpInside)
     }
     
     
@@ -120,6 +91,7 @@ class ViewController: UIViewController {
             self.cameraButton.widthAnchor.constraint(equalToConstant: 120),
             self.cameraButton.heightAnchor.constraint(equalToConstant: 120)
         ])
+        self.cameraButton.addTarget(self, action: #selector(self.onClick(sender:)), for: .touchUpInside)
        // gallery button
         self.collectionView.addSubview(self.galleryButton)
         self.galleryButton.backgroundColor = .serik
@@ -132,7 +104,6 @@ class ViewController: UIViewController {
             self.galleryButton.widthAnchor.constraint(equalToConstant: 120),
             self.galleryButton.heightAnchor.constraint(equalToConstant: 120)
         ])
-        
         //start button
         self.collectionView.addSubview(self.startButton)
         self.startButton.backgroundColor = .red
@@ -145,18 +116,28 @@ class ViewController: UIViewController {
             self.startButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -110),
             self.startButton.heightAnchor.constraint(equalToConstant: 40)
         ])
-        
-        //progressview
-        self.collectionView.addSubview(self.progressView)
-        self.progressView.backgroundColor = .yellow
-        self.progressView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            self.progressView.topAnchor.constraint(equalTo: self.startButton.bottomAnchor, constant: 50.0),
-            self.progressView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 110),
-            self.progressView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -110),
-            self.progressView.heightAnchor.constraint(equalToConstant: 150)
-        ])
-        
+    }
+    
+    @objc
+    private func onClick(sender: UIButton) {
+        let picker = UIImagePickerController()
+        picker.sourceType = .camera
+        picker.delegate = self
+        present(picker, animated: true)
+    }
+}
+
+extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as?
+        UIImage else {
+            return
+        }
+//        imageView?.image = image
     }
 }
 

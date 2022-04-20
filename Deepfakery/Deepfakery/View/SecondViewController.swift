@@ -12,6 +12,11 @@ class SecondViewController: UIViewController {
                                                           y: 0,
                                                           width: UIScreen.main.bounds.width,
                                                           height: 80))
+    private let collectionView: UICollectionView = .init(frame: CGRect(x: 0,
+                                                                       y: 80,
+                                                                       width: UIScreen.main.bounds.width,
+                                                                       height: UIScreen.main.bounds.height - 80),
+                                                         collectionViewLayout:UICollectionViewLayout.init())
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +25,7 @@ class SecondViewController: UIViewController {
     
     private func configureUI() {
         self.addTopNavBar()
+        self.addCollectionView()
     }
     
     private func addTopNavBar() {
@@ -34,6 +40,11 @@ class SecondViewController: UIViewController {
 //            self.dateLabel.topAnchor.constraint(equalTo: self.topNavbar.topAnchor, constant: 50)
 //        ])
         
+    }
+    
+    private func addCollectionView() {
+        self.view.addSubview(self.collectionView)
+        self.collectionView.backgroundColor = .white
     }
     
 }

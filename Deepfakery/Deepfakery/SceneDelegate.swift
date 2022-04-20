@@ -20,22 +20,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         self.window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         
-        let firstViewController = ViewController()
-        let secondViewController = SecondViewController()
-        
-        let firstNavController = UINavigationController(rootViewController: firstViewController)
-        firstNavController.tabBarItem.image = UIImage(named: "home.png")
-
-        let secondNavController = UINavigationController(rootViewController: secondViewController)
-        secondNavController.tabBarItem.image = UIImage(named: "history.png")
-        
-        let tabBarViewController = UITabBarController()
-        tabBarViewController.setViewControllers([firstNavController, secondNavController], animated: true)
-//        tabBarViewController.tabBar.backgroundColor = .kek
-        tabBarViewController.tabBar.tintColor = .black
+        let loginPageViewController = LoginPageViewController()
+//        let firstViewController = ViewController()
+//        let secondViewController = SecondViewController()
+//        
+//        let firstNavController = UINavigationController(rootViewController: firstViewController)
+//        firstNavController.tabBarItem.image = UIImage(named: "home.png")
+//
+//        let secondNavController = UINavigationController(rootViewController: secondViewController)
+//        secondNavController.tabBarItem.image = UIImage(named: "history.png")
+//        
+//        let tabBarViewController = UITabBarController()
+//        tabBarViewController.setViewControllers([firstNavController, secondNavController], animated: true)
+//        tabBarViewController.tabBar.tintColor = .black
         
         window?.windowScene = windowScene
-        window?.rootViewController = tabBarViewController
+        window?.rootViewController = loginPageViewController
         window?.makeKeyAndVisible()
     }
 
