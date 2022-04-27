@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>607203328166-e7ab6dgr9o42itg5i284lja1h59ahj9p.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.607203328166-e7ab6dgr9o42itg5i284lja1h59ahj9p</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCOjfzpzbBJdV0-GpZefx-4G03a2W1qUCc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>607203328166</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>vk.Deepfakery</string>
+	<key>PROJECT_ID</key>
+	<string>deepfakery</string>
+	<key>STORAGE_BUCKET</key>
+	<string>deepfakery.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:607203328166:ios:80835c13ce2dbe9af63467</string>
+</dict>
+</plist>

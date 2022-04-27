@@ -30,7 +30,7 @@ class SecondViewController: UIViewController {
     
     private func addTopNavBar() {
         self.view.addSubview(self.topNavbar)
-        self.topNavbar.backgroundColor = .kek
+        self.topNavbar.backgroundColor = .umud
 //        self.topNavbar.addSubview(self.dateLabel)
 //        // date label
 //        self.dateLabel.translatesAutoresizingMaskIntoConstraints = false

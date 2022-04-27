@@ -35,7 +35,6 @@ class LoginPageViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        self.emailField.becomeFirstResponder()
     }
     
     private func configureUI() {
@@ -44,7 +43,7 @@ class LoginPageViewController: UIViewController {
     
     private func addCollectionView() {
         self.view.addSubview(self.collectionView)
-        self.collectionView.backgroundColor = .kek
+        self.collectionView.backgroundColor = .umud
         
         
         if registerFlag {
@@ -134,7 +133,6 @@ class LoginPageViewController: UIViewController {
             self.passwordField.heightAnchor.constraint(equalToConstant: 45)
         ])
         
-//        if Auth.auth().currentUser == nil
         
         self.collectionView.addSubview(self.logInButton)
         self.logInButton.backgroundColor = .serik
@@ -194,7 +192,6 @@ class LoginPageViewController: UIViewController {
     
     @objc
     private func onClickLogInButton(sender: UIButton) {
-        //добавить алерт на пустую строку
         guard let email = self.emailField.text, !email.isEmpty,
               let password = self.passwordField.text, !password.isEmpty else {
                   self.showErrorEmptyInputAlert()
@@ -207,10 +204,8 @@ class LoginPageViewController: UIViewController {
                 self.showErrorLogInAlert()
                 return
             }
-            print("success Log IN")
             UserDefaults.standard.set(true, forKey: "isUserLoggined")
             self.present(MainPageBuilder.build(), animated: true)
-            // при логауте флаг фалс и дисмисс экрана
         }
     }
     
@@ -284,28 +279,5 @@ class LoginPageViewController: UIViewController {
                                       handler: { _ in }))
         
         present(alert, animated: true)
-    }
-}
-        
-
-
-open class LabelButton: UILabel {
-    var onClick: () -> Void = {}
-    
-    public override init(frame: CGRect) {
-        super.init(frame: frame)
-        isUserInteractionEnabled = true
-    }
-    
-    public required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
-    
-    public convenience init() {
-        self.init(frame: .zero)
-    }
-    
-    open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        onClick()
     }
 }
