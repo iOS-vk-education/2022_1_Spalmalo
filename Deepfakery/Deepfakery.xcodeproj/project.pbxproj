@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C7CA351281A7AF2006D5032 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8C7CA350281A7AF2006D5032 /* Alamofire */; };
+		8C7CA354281A82CC006D5032 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7CA353281A82CC006D5032 /* ViewModel.swift */; };
 		8C7F5C422814ADFC004912B3 /* TabBarVewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7F5C412814ADFC004912B3 /* TabBarVewController.swift */; };
 		8C7F5C462814B46F004912B3 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7F5C452814B46F004912B3 /* UIColor+Extension.swift */; };
 		8C7F5C482814B570004912B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C7F5C472814B570004912B3 /* GoogleService-Info.plist */; };
@@ -20,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8C7CA353281A82CC006D5032 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		8C7F5C412814ADFC004912B3 /* TabBarVewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVewController.swift; sourceTree = "<group>"; };
 		8C7F5C452814B46F004912B3 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		8C7F5C472814B570004912B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -39,12 +42,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CECD64C280E26AE00EB5AF4 /* FirebaseAuth in Frameworks */,
+				8C7CA351281A7AF2006D5032 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C7CA352281A82AF006D5032 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8C7CA353281A82CC006D5032 /* ViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		8C7F5C442814B455004912B3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +84,7 @@
 		8CC227EE27F9076900ECE574 /* Deepfakery */ = {
 			isa = PBXGroup;
 			children = (
+				8C7CA352281A82AF006D5032 /* Model */,
 				8C7F5C442814B455004912B3 /* Extensions */,
 				8CECD651280E8CFD00EB5AF4 /* View */,
 				8CC227EF27F9076900ECE574 /* AppDelegate.swift */,
@@ -112,6 +125,7 @@
 			name = Deepfakery;
 			packageProductDependencies = (
 				8CECD64B280E26AE00EB5AF4 /* FirebaseAuth */,
+				8C7CA350281A7AF2006D5032 /* Alamofire */,
 			);
 			productName = Deepfakery;
 			productReference = 8CC227EC27F9076900ECE574 /* Deepfakery.app */;
@@ -143,6 +157,7 @@
 			mainGroup = 8CC227E327F9076900ECE574;
 			packageReferences = (
 				8CECD64A280E26AE00EB5AF4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				8C7CA34F281A7AF2006D5032 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 8CC227ED27F9076900ECE574 /* Products */;
 			projectDirPath = "";
@@ -176,6 +191,7 @@
 				8CC227F027F9076900ECE574 /* AppDelegate.swift in Sources */,
 				8CECD654280E8E3000EB5AF4 /* LoginPageViewController.swift in Sources */,
 				8CC227F227F9076900ECE574 /* SceneDelegate.swift in Sources */,
+				8C7CA354281A82CC006D5032 /* ViewModel.swift in Sources */,
 				8C7F5C462814B46F004912B3 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,6 +393,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		8C7CA34F281A7AF2006D5032 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		8CECD64A280E26AE00EB5AF4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -388,6 +412,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8C7CA350281A7AF2006D5032 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8C7CA34F281A7AF2006D5032 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		8CECD64B280E26AE00EB5AF4 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8CECD64A280E26AE00EB5AF4 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

@@ -9,6 +9,7 @@ import UIKit
 import AVFoundation
 import Firebase
 import SwiftUI
+import Alamofire
 
 class ViewController: UIViewController {
     private let topNavbar = UINavigationBar(frame: CGRect(x: 0,
@@ -173,10 +174,51 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         guard let image = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage else { return }
         self.imageView.image = image
         picker.dismiss(animated: true, completion: nil)
+        print("RESULT = \(getResult(image: image))")
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func getResult(image: UIImage) -> String {
+        let imageData = image.pngData()
+        AF.upload(multipartFormData: { (multipartFormData) in
+                multipartFormData.append(imageData!, withName: "data", fileName: "swift_file.png", mimeType: "image/png")
+            },
+            to: "http://127.0.0.1:8080/api/v1/photo", method: .post).responseDecodable(of: DecodableType.self) { response in
+                switch response.result {
+                case .success(let data):
+                    print("RESULT = \(data.result.type)")
+                case .failure(_):
+                    let alert = UIAlertController(title: "Error",
+                                                  message: "Something go wrong\nTry again",
+                                                  preferredStyle: .alert)
+
+                    alert.addAction(UIAlertAction(title: "OK",
+                                                  style: .default,
+                                                  handler: { _ in }))
+
+                    self.present(alert, animated: true)
+                }
+            }
+//        AF.request("http://127.0.0.1:8080/api/v1/photo", method: .post).responseDecodable(of: DecodableType.self) { response in
+//            switch response.result {
+//            case .success(let data):
+//                print(data)
+//            case .failure(_):
+//                let alert = UIAlertController(title: "Error",
+//                                              message: "Something go wrong\nTry again",
+//                                              preferredStyle: .alert)
+//
+//                alert.addAction(UIAlertAction(title: "OK",
+//                                              style: .default,
+//                                              handler: { _ in }))
+//
+//                self.present(alert, animated: true)
+//            }
+//        }
+        return "jjjj"
     }
 }
 
