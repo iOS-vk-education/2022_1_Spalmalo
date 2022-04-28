@@ -25,15 +25,14 @@ def preprocess_image(img):
 class Photo(Resource):
     @staticmethod
     def post():
-        """Провериь новое фото"""
+        """Проверить новое фото"""
         image = request.files.get('data', '')
         decoded_image = preprocess_image(np.asarray(Image.open(image)))
-       
+
         result = model.predict(decoded_image[np.newaxis])
     
         cls = ["FAKE", "REAL"][np.argmax(result)]
         score = np.max(result)
         return make_response(200, result = {"class": cls, 
                                             "score": str(score)})
-
-        
+                                            
