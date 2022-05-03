@@ -1,15 +1,18 @@
 from flask import Flask
 
-def create_app():
-    app = Flask(__name__)
 
-    # Register extensions
-    from extensions import cors, ma
-    cors.init_app(app)
-    ma.init_app(app)
+app = Flask(__name__)
 
-    # Register Blueprints
-    from api.photos import api_tracks_bp
-    app.register_blueprint(api_tracks_bp, url_prefix="/api/v1")
+# Register extensions
+from extensions import cors, ma
+cors.init_app(app)
+ma.init_app(app)
 
-    return app
+# Register Blueprints
+from api.photos import api_tracks_bp
+app.register_blueprint(api_tracks_bp, url_prefix="/api/v1")
+
+
+if __name__ == '__main__':
+    app.run()
+

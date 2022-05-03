@@ -1,17 +1,16 @@
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1'
 from flask import request
 from flask_restful import Resource
-from sqlalchemy.sql import func
-from api.photos.parsers import CoordinateSchema
-from api.utils import make_response, make_empty
-
+from api.utils import make_response
 from PIL import Image
 import numpy as np
-import tensorflow as tf
 from pathlib import Path 
+import tensorflow as tf
 
 IMAGE_SIZE = (28, 28)
 
-model = tf.keras.models.load_model(Path(Path.cwd(), "recognizer", "model"))
+model = tf.keras.models.load_model(Path(Path.cwd(), "model"))
 
 # На стороне клиента:
 # 1) Открыть изображение и прогнать функцию preprocess_image(np.asarray(изображение))
@@ -33,6 +32,6 @@ class Photo(Resource):
     
         cls = ["FAKE", "REAL"][np.argmax(result)]
         score = np.max(result)
-        return make_response(200, result = {"class": cls, 
+        return make_response(200, result = {"type": cls, 
                                             "score": str(score)})
                                             
