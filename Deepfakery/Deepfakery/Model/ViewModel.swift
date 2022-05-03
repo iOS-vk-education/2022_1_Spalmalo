@@ -36,3 +36,9 @@ struct DecodableType: Decodable {
     }
 }
 
+struct Document {
+    let uuid: String
+    let url: String
+    let type: String
+}
+

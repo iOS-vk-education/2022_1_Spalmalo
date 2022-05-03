@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C0711552821B9D600BCD3DB /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8C0711542821B9D600BCD3DB /* Kingfisher */; };
+		8C0711572821BBCC00BCD3DB /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0711562821BBCC00BCD3DB /* CustomCollectionViewCell.swift */; };
 		8C339F8C281DBAAC00069AE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C339F8B281DBAAC00069AE8 /* Assets.xcassets */; };
 		8C339F91281EA18700069AE8 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8C339F90281EA18700069AE8 /* FirebaseAuth */; };
 		8C339F93281EA18700069AE8 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 8C339F92281EA18700069AE8 /* FirebaseDatabase */; };
@@ -25,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8C0711562821BBCC00BCD3DB /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		8C339F8B281DBAAC00069AE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C7CA353281A82CC006D5032 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		8C7F5C412814ADFC004912B3 /* TabBarVewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVewController.swift; sourceTree = "<group>"; };
@@ -44,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C0711552821B9D600BCD3DB /* Kingfisher in Frameworks */,
 				8C339F93281EA18700069AE8 /* FirebaseDatabase in Frameworks */,
 				8C339F95281EA18700069AE8 /* FirebaseFirestore in Frameworks */,
 				8C7CA351281A7AF2006D5032 /* Alamofire in Frameworks */,
@@ -109,6 +113,7 @@
 				8CC2281527F9B95A00ECE574 /* SecondViewController.swift */,
 				8CECD653280E8E3000EB5AF4 /* LoginPageViewController.swift */,
 				8C7F5C412814ADFC004912B3 /* TabBarVewController.swift */,
+				8C0711562821BBCC00BCD3DB /* CustomCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -135,6 +140,7 @@
 				8C339F92281EA18700069AE8 /* FirebaseDatabase */,
 				8C339F94281EA18700069AE8 /* FirebaseFirestore */,
 				8C339F96281EA18700069AE8 /* FirebaseStorage */,
+				8C0711542821B9D600BCD3DB /* Kingfisher */,
 			);
 			productName = Deepfakery;
 			productReference = 8CC227EC27F9076900ECE574 /* Deepfakery.app */;
@@ -167,6 +173,7 @@
 			packageReferences = (
 				8C7CA34F281A7AF2006D5032 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				8C339F8F281EA18700069AE8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				8C0711532821B9D600BCD3DB /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 8CC227ED27F9076900ECE574 /* Products */;
 			projectDirPath = "";
@@ -195,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CC2281627F9B95A00ECE574 /* SecondViewController.swift in Sources */,
+				8C0711572821BBCC00BCD3DB /* CustomCollectionViewCell.swift in Sources */,
 				8C7F5C422814ADFC004912B3 /* TabBarVewController.swift in Sources */,
 				8CC227F427F9076900ECE574 /* ViewController.swift in Sources */,
 				8CC227F027F9076900ECE574 /* AppDelegate.swift in Sources */,
@@ -402,6 +410,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		8C0711532821B9D600BCD3DB /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		8C339F8F281EA18700069AE8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -421,6 +437,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8C0711542821B9D600BCD3DB /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8C0711532821B9D600BCD3DB /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		8C339F90281EA18700069AE8 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8C339F8F281EA18700069AE8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

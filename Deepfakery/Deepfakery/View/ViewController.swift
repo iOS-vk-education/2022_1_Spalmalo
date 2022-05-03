@@ -34,7 +34,7 @@ class ViewController: UIViewController {
     private let clearButton = UIButton()
     private let goButton = UIButton()
     private let saveButton = UIButton()
-    private let logOutButton = UIButton()
+
     private let imageView = UIImageView()
     private let resultLabel = UILabel()
 
@@ -71,7 +71,7 @@ class ViewController: UIViewController {
         self.addClearButton()
         self.addGoButton()
         self.addSaveButton()
-//        self.addLogOutButton()
+        self.addLogOutButton()
                
         
     }
@@ -79,7 +79,9 @@ class ViewController: UIViewController {
     private func addImageView() {
         self.view.addSubview(self.imageView)
         self.imageView.translatesAutoresizingMaskIntoConstraints = false
-        self.imageView.backgroundColor = .black
+        self.imageView.backgroundColor = .white
+        self.imageView.image = UIImage(named: "deepfake.png")
+        self.imageView.contentMode = .scaleAspectFit
         NSLayoutConstraint.activate([
             self.imageView.topAnchor.constraint(equalTo: self.topNavbar.bottomAnchor, constant: 20),
             self.imageView.heightAnchor.constraint(equalToConstant: 350),
@@ -178,15 +180,8 @@ class ViewController: UIViewController {
     
     
     private func addLogOutButton() {
-        self.collectionView.addSubview(self.logOutButton)
-        self.logOutButton.setTitle("Log Out", for: .normal)
-        self.logOutButton.setTitleColor(.black, for: .normal)
-        self.logOutButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            self.logOutButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -20),
-            self.logOutButton.topAnchor.constraint(equalTo: self.topNavbar.bottomAnchor, constant: 10)
-        ])
-        self.logOutButton.addTarget(self, action: #selector(self.onClickLogoutButton), for: .touchUpInside)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log out", style: .plain, target: self, action: #selector(self.onClickLogoutButton))
+        navigationItem.rightBarButtonItem?.tintColor = .black
     }
     
     private func getResult(image: UIImage) {
@@ -198,7 +193,12 @@ class ViewController: UIViewController {
                   to: "http://127.0.0.1:5000/api/v1/photo", method: .post).responseDecodable(of: DecodableType.self) { response in
             switch response.result {
             case .success(let data):
-                self.resultLabel.text = data.result.type
+                if data.result.type == "REAL" {
+                    self.resultLabel.text = data.result.type + "  ✅"
+                } else {
+                    self.resultLabel.text = data.result.type + "  ❌"
+                }
+                
             case .failure(_):
                 let alert = UIAlertController(title: "Error",
                                               message: "Something go wrong\nTry again",
@@ -262,8 +262,7 @@ class ViewController: UIViewController {
     @objc
     func onClickClearButton(sender: UIButton) {
         self.resultLabel.text = ""
-        self.imageView.image = nil
-        self.imageView.backgroundColor = .black
+        self.imageView.image = UIImage(named: "deepfake.png")
     }
     
     
@@ -277,7 +276,7 @@ class ViewController: UIViewController {
                 db.collection("user_images").addDocument(data: [
                     "imageURL": url.absoluteString,
                     "type": self.resultLabel.text,
-                    "uuid": Auth.auth().currentUser!.uid
+                    "uuid": Auth.auth().currentUser!.uid,
                 ])
                 let alert = UIAlertController(title: "Success",
                                               message: "Image saved",
@@ -288,6 +287,7 @@ class ViewController: UIViewController {
                                               handler: { _ in }))
                 
                 self.present(alert, animated: true)
+                self.collectionView.reloadData()
             case .failure(_):
                 return
             }

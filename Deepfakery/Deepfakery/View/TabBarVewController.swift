@@ -22,6 +22,11 @@ final class MainPageBuilder {
         tabBarViewController.setViewControllers([firstNavController, secondNavController], animated: true)
         tabBarViewController.tabBar.tintColor = .black
         tabBarViewController.modalPresentationStyle = .fullScreen
+        tabBarViewController.tabBar.backgroundColor = .white
+        tabBarViewController.tabBar.frame = .init(x: 0,
+                                                  y: 0,
+                                                  width: tabBarViewController.tabBar.frame.width,
+                                                  height: 10)
         return tabBarViewController
     }
 }
